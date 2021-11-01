@@ -1,67 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LoginForm.css";
 
-const LoginFrom = () => {
+const Form = () => {
+  const [name, setName] = useState("");
+  const [lastname, setLastname] = useState("");
+
+  const [fullName, setFullName] = useState("");
+  const [fullLastName, setFullLastName] = useState("");
+
+  const onSubmits = (event) => {
+    event.preventDefault();
+    setFullName(name);
+    setFullLastName(lastname);
+  };
+  const inputElement = (e) => {
+    setName(e.target.value);
+  };
+  const inputElementTwo = (e) => {
+    setLastname(e.target.value);
+  };
   return (
     <>
       <div className="container">
-        <h1>Registration form</h1>
-        <form action="">
-          <label htmlFor="first_name">First name</label>
+        <h1>Hii welcome {fullName}</h1>
+        <form onSubmit={onSubmits}>
+        <label htmlFor="first_name">Login ID</label>
           <input
             type="text"
-            autoComplete="off"
-            // value={registration.fname}
-            // onChange={changeHandler}
-            name="fname"
-            id="first_name"
-            placeholder="John"
+            placeholder="Enter your first name"
+            onChange={inputElement}
+            value={name}
           />
-          <label htmlFor="last_name">Last name</label>
+          <label htmlFor="last_name">Password</label>
           <input
             type="text"
-            autoComplete="off"
-            // value={registration.lname}
-            // onChange={changeHandler}
-            name="lname"
-            id="last_name"
-            placeholder="Doe"
+            placeholder="Enter your first name"
+            onChange={inputElementTwo}
+            value={lastname}
           />
-          <label htmlFor="email">Email ID</label>
-          <input
-            type="text"
-            autoComplete="off"
-            // value={registration.email}
-            // onChange={changeHandler}
-            name="email"
-            id="email"
-            placeholder="john@doe.com"
-          />
-          <label htmlFor="ph_no">Phone no</label>
-          <input
-            type="text"
-            autoComplete="off"
-            // value={registration.phno}
-            // onChange={changeHandler}
-            name="phno"
-            id="ph_no"
-            placeholder="+91-8966654467"
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            autoComplete="off"
-            // value={registration.password}
-            // onChange={changeHandler}
-            name="password"
-            id="password"
-            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-          />
-          <button type="submit">Submit</button>
+          <button type="submit">Login</button>
         </form>
       </div>
     </>
   );
 };
-
-export default LoginFrom;
+export default Form;

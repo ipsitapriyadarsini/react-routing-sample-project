@@ -10,12 +10,12 @@ const Menu = () => {
           Input
         </NavLink>
         <br />
-        <NavLink activeClassName="selected" to="/form">
-          Form
+        <NavLink activeClassName="selected" to="/loginform">
+         Login Form
         </NavLink>
         <br />
-        <NavLink activeClassName="selected" to="/loginform">
-          Login Form
+        <NavLink activeClassName="selected" to="/RegistrationForm">
+        Registration Form
         </NavLink>
       </div>
     </>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "./Input.css";
+import "./LoginForm.css";
 
 const Input = () => {
   const [name, setName] = useState("");
@@ -14,18 +14,19 @@ const Input = () => {
   };
   return (
     <>
-      <form>
-        <div>
-          <h1>Hii welcome {fullName}</h1>
+      <div className="container">
+        <h1>Hii welcome {fullName}</h1>
+        <form>
           <input
-            type='text'
-            placeholder='Enter your name'
+            type="text"
+            placeholder="Enter your name"
             onChange={inputElement}
             value={name}
+            // id='name'
           />
           <button onClick={withSubmit}>click me</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </>
   );
 };

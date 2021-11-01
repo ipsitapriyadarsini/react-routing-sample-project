@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Menu from "./Menu";
 import Input from "./Components/Input";
-import Form from "./Components/Form";
-import LoginForm from "./Components/LoginForm";
+import Form from "./Components/LoginForm";
+import RegistrationForm from "./Components/RegistrationForm";
 
 const App = () => {
   return (
@@ -12,8 +12,8 @@ const App = () => {
 
       <Switch>
         <Route exact path="/" component={Input} />
-        <Route path="/form" component={Form} />
-        <Route path="/loginform" component={LoginForm} />
+        <Route path="/loginform" component={Form} />
+        <Route path="/RegistrationForm" component={RegistrationForm} />
       </Switch>
     </>
   );
